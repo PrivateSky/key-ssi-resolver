@@ -17,7 +17,7 @@ assert.callback("get HashLinkSSI from SignedHashLinkSSI test", (callback) => {
     assert.equal(SSITypes.HASH_LINK_SSI, hashLinkSSI.getTypeName());
     assert.equal(domain, hashLinkSSI.getDLDomain());
     assert.equal(hashLink, hashLinkSSI.getSpecificString());
-    assert.equal("", hashLinkSSI.getControl());
+    assert.equal("", hashLinkSSI.getControlString());
 
     callback();
 });
