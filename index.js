@@ -1,6 +1,5 @@
 const KeySSIResolver = require('./lib/KeySSIResolver');
 const DSUFactory = require("./lib/DSUFactoryRegistry");
-const BootStrapingService = require("./lib/BootstrapingService");
 
 /**
  * Create a new KeySSIResolver instance and append it to
@@ -13,12 +12,10 @@ function initialize(options) {
 
     const BrickMapStrategyFactory = require("bar").BrickMapStrategyFactory;
 
-    const bootstrapingService = new BootStrapingService(options);
     const brickMapStrategyFactory = new BrickMapStrategyFactory();
     const keySSIFactory = require('./lib/KeySSIs/KeySSIFactory');
 
     options.dsuFactory =  new DSUFactory({
-        bootstrapingService,
         brickMapStrategyFactory,
         keySSIFactory
     });
