@@ -10,6 +10,7 @@ const DSUFactory = require("./lib/DSUFactoryRegistry");
 function initialize(options) {
     options = options || {};
 
+
     const BrickMapStrategyFactory = require("bar").BrickMapStrategyFactory;
 
     const brickMapStrategyFactory = new BrickMapStrategyFactory();
@@ -28,8 +29,8 @@ function initialize(options) {
 module.exports = {
     initialize,
     KeySSIFactory: require('./lib/KeySSIs/KeySSIFactory'),
-    CryptoAlgorithmsRegistry: require('./lib/KeySSIs/CryptoAlgorithmsRegistry'),
-    CryptoFunctionTypes: require('./lib/KeySSIs/CryptoFunctionTypes'),
+    CryptoAlgorithmsRegistry: require('./lib/CryptoAlgorithms/CryptoAlgorithmsRegistry'),
+    CryptoFunctionTypes: require('./lib/CryptoAlgorithms/CryptoFunctionTypes'),
     SSITypes: require("./lib/KeySSIs/SSITypes"),
     DSUFactory: require("./lib/DSUFactoryRegistry")
 };
