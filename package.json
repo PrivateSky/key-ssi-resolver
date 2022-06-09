@@ -1,6 +1,6 @@
 {
     "name": "key-ssi-resolver",
-    "version": "",
+    "version": "v1.0.1",
     "description": "",
     "main": "index.js",
     "directories": {
