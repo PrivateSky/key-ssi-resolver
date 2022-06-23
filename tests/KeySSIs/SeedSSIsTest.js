@@ -7,7 +7,7 @@ const seedSSI = KeySSIFactory.create(SSITypes.SEED_SSI);
 
 assert.callback("SeedSSIs test", (callback) => {
     seedSSI.initialize("domain", undefined, undefined, "v0", '', (err) =>{
-        KeySSIFactory.getRelatedType(seedSSI, SSITypes.SZERO_ACCESS_SSI, (err, sZaSSI) => {
+        KeySSIFactory.getDerivedType(seedSSI, SSITypes.SZERO_ACCESS_SSI, (err, sZaSSI) => {
             if (err) {
                 throw err;
             }

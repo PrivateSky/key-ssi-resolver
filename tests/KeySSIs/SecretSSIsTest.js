@@ -8,7 +8,7 @@ const secretSSI = KeySSIFactory.create(SSITypes.SECRET_SSI);
 secretSSI.load(SSITypes.SECRET_SSI, "domain", "subtype specific string", "v0");
 
 assert.callback("KeySSIs test", (callback) => {
-    KeySSIFactory.getRelatedType(secretSSI, SSITypes.PUBLIC_SSI, (err, publicSSI) => {
+    KeySSIFactory.getDerivedType(secretSSI, SSITypes.PUBLIC_SSI, (err, publicSSI) => {
         if (err) {
             throw err;
         }
