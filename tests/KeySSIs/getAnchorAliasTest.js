@@ -11,7 +11,27 @@ assert.callback("Get anchor alias from SeedSSI test", (callback) => {
             throw err;
         }
 
-        assert.true(seedSSI.getAnchorId() === seedSSI.derive().derive().getIdentifier());
-        callback();
+        seedSSI.getAnchorId((err, anchorId)=>{
+            if (err) {
+                throw err;
+            }
+
+            seedSSI.derive((err, derivedKeySSI)=>{
+                if (err) {
+                    throw err;
+                }
+
+                derivedKeySSI.derive((err, twoTimedDerivedKeySSI)=>{
+                    if (err) {
+                        throw err;
+                    }
+
+                    // assert.true(seedSSI.getAnchorId() === seedSSI.derive().derive().getIdentifier());
+                    assert.true(anchorId === twoTimedDerivedKeySSI.getNoHintIdentifier());
+                    callback();
+
+                })
+            })
+        })
     });
 });
